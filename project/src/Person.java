@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Calendar;
 
-
 public class Person {
 
     public int PersonId;
@@ -11,8 +10,9 @@ public class Person {
     public int YearOfBirth;
     public ArrayList<Courses> PersonCourses = new ArrayList<Courses>();
     public ArrayList<Vehicle> PersonVehicles = new ArrayList<Vehicle>();
+    public Vehicle FavrioteVehicle;
 
-    public int CalculateAge() {
+     public int CalculateAge() {
         int year = Calendar.getInstance().get(Calendar.YEAR);
         int PersonAge = YearOfBirth - year;
         return PersonAge;
@@ -27,11 +27,19 @@ public class Person {
         if(lang == "Nepali"){
             FinalGreet="Namaste" + " " + this.FullName();
         }
+        else if (lang== "Hindi"){
+            FinalGreet = "Namaskar" + " " + this.FullName();
+        }
+        else if (lang == "French"){
+            FinalGreet = "Bonjour" + " " + this.FullName();
+        }
+        else if (lang== "Kanadda"){
+            FinalGreet = "En Machha!" + " " + this.FullName();
+        }
+        else {
+            System.out.println(" ");
+        }
         return FinalGreet;
-
-
-
-
     }
 
 }
